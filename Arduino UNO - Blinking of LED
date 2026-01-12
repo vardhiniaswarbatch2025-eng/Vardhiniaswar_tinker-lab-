@@ -1,0 +1,27 @@
+int redLED = 8;     // Red LED connected to digital pin 8
+int greenLED = 9;   // Green LED connected to digital pin 9
+int yellowLED = 10; // Yellow LED connected to digital pin 10
+
+void setup() {
+  // Set pins as output
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+}
+
+void loop() {
+  // Turn on Red LED
+  digitalWrite(redLED, HIGH);
+  delay(500); // wait 0.5 seconds
+  digitalWrite(redLED, LOW);
+
+  // Turn on Green LED
+  digitalWrite(greenLED, HIGH);
+  delay(500);
+  digitalWrite(greenLED, LOW);
+
+  // Turn on Yellow LED
+  digitalWrite(yellowLED, HIGH);
+  delay(500);
+  digitalWrite(yellowLED, LOW);
+}
