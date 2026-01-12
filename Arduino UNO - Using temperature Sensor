@@ -1,0 +1,40 @@
+// Pin connections
+int sensorPin = A0;     // LM35 connected to Analog pin A0
+int buzzerPin = 8;      // Buzzer connected to digital pin 8
+int ledPin = 9;         // LED connected to digital pin 9
+
+// Threshold temperature in Celsius
+float threshold = 30.0;
+
+void setup() {
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600); // For monitoring temperature
+}
+
+void loop() {
+  // Read analog value from LM35
+  int sensorValue = analogRead(sensorPin);
+
+  // Convert to voltage (5V reference, 10-bit ADC)
+  float voltage = sensorValue * (5.0 / 1023.0);
+
+  // Convert voltage to temperature (10 mV per °C)
+  float temperatureC = voltage * 100.0;
+
+  // Print temperature to Serial Monitor
+  Serial.print("Temperature: ");
+  Serial.print(temperatureC);
+  Serial.println(" °C");
+
+  // Check if temperature exceeds threshold
+  if (temperatureC > threshold) {
+    digitalWrite(buzzerPin, HIGH); // Turn buzzer ON
+    digitalWrite(ledPin, HIGH);    // Turn LED ON
+  } else {
+    digitalWrite(buzzerPin, LOW);  // Turn buzzer OFF
+    digitalWrite(ledPin, LOW);     // Turn LED OFF
+  }
+
+  delay(1000); // Wait 1 second before next reading
+}
