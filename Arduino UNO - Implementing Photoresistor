@@ -1,0 +1,19 @@
+// Define pins
+int ldrPin = A0;       // LDR connected to analog pin A0
+int ledPin = 9;        // LED connected to digital pin 9 (PWM capable)
+
+void setup() {
+  Serial.begin(9600);       // Start serial monitor
+  pinMode(ledPin, OUTPUT);  // Set LED pin as output
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin);   // Read LDR value (0–1023)
+  Serial.println(ldrValue);            // Print value to Serial Monitor
+
+  // Map LDR value to LED brightness (0–255)
+  int brightness = map(ldrValue, 0, 1023, 255, 0);
+  analogWrite(ledPin, brightness);
+
+  delay(100); // Small delay for stability
+}
