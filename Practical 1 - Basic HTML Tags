@@ -1,0 +1,69 @@
+<DOCTYPE! html>
+<html>
+<head>
+<title>My First Page</title>
+<style>
+table, th, td{
+border:5px solid pink;
+border-collapse:collapse;}
+</style>
+</head>
+<body>
+<table width=60%>
+<caption>STUDENT DATA</caption>
+<tr>
+<th rowspan=2>PRN</th>
+<th rowspan=2>NAME</th>
+<th colspan=3>MARKS</th>
+</tr>
+<tr>
+<th>Sub1</th>
+<th>Sub2</th>
+<th>Sub3</th>
+</tr>
+<tr>
+<td>25070521097</td>
+<td>VARDHINI ASWAR</td>
+<td>94</td>
+<td>98</td>
+<td>99</td>
+</tr>
+</table>
+<ul>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ul>
+<ul type=square>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ul>
+<ol type=i>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ol>
+<ol>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ol>
+<ol reversed>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ol>
+<ol start=101>
+<li>Mango</li>
+<li>Strawberry</li>
+<li>Apple</li>
+<li>Pineapple</li>
+</ol>
+</body>
+</html>
